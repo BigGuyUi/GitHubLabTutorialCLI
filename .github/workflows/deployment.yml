@@ -1,22 +1,22 @@
-name: Deploy Website 
+name: Deploy Website
 
 on: 
- push: 
-  branches: 
-    [main]
+  push: 
+    branches: 
+      - main
 
 jobs: 
- projectdeploy: 
-  runs-on: ubuntu-latest 
+  projectdeploy: 
+    runs-on: ubuntu-latest 
 
-steps: 
- - name: Checkout Repository 
-   uses: actions/checkout@v4 
+    steps: 
+      - name: Checkout Repository 
+        uses: actions/checkout@v4 
 
-- name: Upload Artifact  
-   uses: actions/upload-pages-artifact@v3  
-    with:  
-     path: .
+      - name: Upload Artifact  
+        uses: actions/upload-pages-artifact@v3  
+        with:  
+          path: .
 
-- name: Checkout Repository 
-  uses: actions/deploy-pages@v4
+      - name: Deploy Pages
+        uses: actions/deploy-pages@v4
